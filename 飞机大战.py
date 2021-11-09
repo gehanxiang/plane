@@ -501,24 +501,20 @@ def main():
                 if score > record_score:
                     with open("record.txt", "w") as f:
                         f.write(str(score))
-            
             # 绘制结束画面
             record_score_text = score_font.render("Best : %d" % record_score, True, (255, 255, 255))
             screen.blit(record_score_text, (50, 50))
-            
             gameover_text1 = gameover_font.render("Your Score", True, (255, 255, 255))
             gameover_text1_rect = gameover_text1.get_rect()
             gameover_text1_rect.left, gameover_text1_rect.top = \
                 (width - gameover_text1_rect.width) // 2, height // 3
             screen.blit(gameover_text1, gameover_text1_rect)
-            
             gameover_text2 = gameover_font.render(str(score), True, (255, 255, 255))
             gameover_text2_rect = gameover_text2.get_rect()
             gameover_text2_rect.left, gameover_text2_rect.top = \
                 (width - gameover_text2_rect.width) // 2, \
                 gameover_text1_rect.bottom + 10
             screen.blit(gameover_text2, gameover_text2_rect)
-            
             again_rect.left, again_rect.top = \
                 (width - again_rect.width) // 2, \
                 gameover_text2_rect.bottom + 50
